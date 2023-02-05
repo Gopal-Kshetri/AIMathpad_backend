@@ -6,15 +6,13 @@ import cv2
 app = FastAPI()
 
 
-# @app.post("/image")
-# async def image(file: UploadFile = File(...)):
-#     model_load()
-#     image = np.asarray(bytearray(await file.read()),dtype="uint8")
-#     image = cv2.imdecode(image,cv2.IMREAD_UNCHANGED)
-#     prediction = make_prediction(image)
-#     return {"message": prediction}
-@app.get("/")
-async def root():
-    image = cv2.imread("./hello.png")
+from fastapi import FastAPI, File, UploadFile
+import cv2
+
+app = FastAPI()
+
+@app.post("/process-image")
+async def process_image(file: UploadFile):
+    image = cv2.imdecode(np.frombuffer(await file.read(), np.uint8), -1)
     result = make_prediction(image)
     return {"message": result}
