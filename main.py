@@ -3,6 +3,7 @@ from model_load import model_load
 from predict import make_prediction
 import numpy as np
 import cv2
+
 app = FastAPI()
 
 
@@ -17,4 +18,5 @@ app = FastAPI()
 async def root():
     image = cv2.imread("./hello.png")
     result = make_prediction(image)
+    # latex_text = unicode_to_latex(result)
     return {"message": result}
