@@ -1,16 +1,15 @@
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
+import base64
+import cv2
+
 from model_load import model_load
 from predict import make_prediction
 import numpy as np
-import cv2
-<<<<<<< HEAD
 
-from pydantic import BaseModel
 
-=======
-import base64
-from fastapi.middleware.cors import CORSMiddleware
->>>>>>> 270348ee1d2e560fbe7412e893dae51eec917aba
 app = FastAPI()
 origins = ["*"]
 
@@ -42,8 +41,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-import base64
 
 class Data(BaseModel):
     img_file:str
