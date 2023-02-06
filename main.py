@@ -3,10 +3,24 @@ from model_load import model_load
 from predict import make_prediction
 import numpy as np
 import cv2
+<<<<<<< HEAD
 
 from pydantic import BaseModel
 
+=======
+import base64
+from fastapi.middleware.cors import CORSMiddleware
+>>>>>>> 270348ee1d2e560fbe7412e893dae51eec917aba
 app = FastAPI()
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 from fastapi import FastAPI, File, UploadFile
@@ -48,7 +62,7 @@ async def process_image(inp: Data):
     
     cv2.imwrite('hellohi.jpg',image)
     
-
     result = make_prediction(image)
     print(result)
     return {"message": result}
+    
