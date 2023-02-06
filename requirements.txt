@@ -80,7 +80,7 @@ streamlit-drawable-canvas==0.9.1
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
-tensorflow==2.8.0
+tensorflow==2.11.0
 tensorflow-io-gcs-filesystem==0.30.0
 termcolor==2.2.0
 tf-estimator-nightly==2.8.0.dev2021122109
@@ -93,7 +93,6 @@ tzdata==2022.7
 tzlocal==4.2
 urllib3==1.26.14
 uvicorn==0.20.0
-uvloop==0.17.0
 validators==0.20.0
 visualkeras==0.0.2
 watchdog==2.2.1
