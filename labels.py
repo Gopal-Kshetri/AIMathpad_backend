@@ -1,0 +1,101 @@
+
+
+# labels_symbols=dict()
+# for i in range(0,10):
+#     labels_symbols[i] = chr(48+i)
+# labels_symbols .update( {
+#     10:'-', 11:'+', 12:'*', 13:'=', 14:'A', 15:'b', 16:'<', 17:'>', 18:'/',19:'√', 20:'(',21:')'
+# })
+# symbols_folder = {'*':'times','/':'forward_slash','<':'lt','>':'gt','√':'\sqrt'}#'(':'',')':''}
+
+# labels_symbols2 = {22:'C',23:'X',24:'y',25:'z',26:'\\alpha',27:'beta',
+#                   28:'\gamma',29:'\lambda',30:'\delta',31:'\sigma',32:'\\theta', 33:'\phi',34:'\mu', 35:'N', 36:'u', 37:'v'}
+
+# labels_symbols.update(labels_symbols2)
+
+# exclude_symbols = []
+
+
+label_indexing = {
+    0: 'kraggle_maths_symbols/!/',
+    1: 'kraggle_maths_symbols/(/', 
+    2: 'kraggle_maths_symbols/)/', 
+    3: 'kraggle_maths_symbols/,/', 
+    4: 'kraggle_maths_symbols/-/', 
+    5: 'kraggle_maths_symbols/[/', 
+    6: 'kraggle_maths_symbols/]/', 
+    7: 'kraggle_maths_symbols/{/', 
+    8: 'kraggle_maths_symbols/}/', 
+    9: 'kraggle_maths_symbols/+/', 
+    10: 'kraggle_maths_symbols/=/', 
+    11: 'kraggle_maths_symbols/0/', 
+    12: 'kraggle_maths_symbols/1/', 
+    13: 'kraggle_maths_symbols/2/', 
+    14: 'kraggle_maths_symbols/3/', 
+ 15: 'kraggle_maths_symbols/4/',
+ 16: 'kraggle_maths_symbols/5/',
+ 17: 'kraggle_maths_symbols/6/',
+ 18: 'kraggle_maths_symbols/7/',
+ 19: 'kraggle_maths_symbols/8/',
+ 20: 'kraggle_maths_symbols/9/',
+ 21: 'kraggle_maths_symbols/A/',
+ 22: 'kraggle_maths_symbols/\\alpha/',
+ 23: 'kraggle_maths_symbols/|/',
+ 24: 'kraggle_maths_symbols/b/',
+ 25: 'kraggle_maths_symbols/\\beta/',
+ 26: 'kraggle_maths_symbols/C/',
+ 27: 'kraggle_maths_symbols/\cos/',
+ 28: 'kraggle_maths_symbols/d/',
+ 29: 'kraggle_maths_symbols/\delta/',
+ 30: 'kraggle_maths_symbols/div/',
+ 31: 'kraggle_maths_symbols/e/',
+ 32: 'kraggle_maths_symbols/\exists/',
+ 33: 'kraggle_maths_symbols/f/',
+ 34: 'kraggle_maths_symbols/\\forall/',
+ 35: 'kraggle_maths_symbols/forward_slash/',
+ 36: 'kraggle_maths_symbols/G/',
+ 37: 'kraggle_maths_symbols/\gamma/',
+ 38: 'kraggle_maths_symbols/\geq/',
+ 39: 'kraggle_maths_symbols/>/',
+ 40: 'kraggle_maths_symbols/H/',
+ 41: 'kraggle_maths_symbols/i/',
+ 42: 'kraggle_maths_symbols/in/',
+ 43: 'kraggle_maths_symbols/\infty/',
+ 44: 'kraggle_maths_symbols/int/',
+ 45: 'kraggle_maths_symbols/j/',
+ 46: 'kraggle_maths_symbols/k/',
+ 47: 'kraggle_maths_symbols/l/',
+ 48: 'kraggle_maths_symbols/\lambda/',
+ 49: 'kraggle_maths_symbols/\ldots/',
+ 50: 'kraggle_maths_symbols/\leq/',
+ 51: 'kraggle_maths_symbols/\lim/',
+ 52: 'kraggle_maths_symbols/\log/',
+ 53: 'kraggle_maths_symbols/\lt/',
+ 54: 'kraggle_maths_symbols/M/',
+ 55: 'kraggle_maths_symbols/\mu/',
+ 56: 'kraggle_maths_symbols/N/',
+ 57: 'kraggle_maths_symbols/\\neq/',
+ 58: 'kraggle_maths_symbols/o/',
+ 59: 'kraggle_maths_symbols/p/',
+ 60: 'kraggle_maths_symbols/\phi/',
+ 61: 'kraggle_maths_symbols/\pi/',
+ 62: 'kraggle_maths_symbols/pm/',
+ 63: 'kraggle_maths_symbols/prime/',
+ 64: 'kraggle_maths_symbols/q/',
+ 65: 'kraggle_maths_symbols/R/',
+ 66: 'kraggle_maths_symbols/rightarrow/',
+ 67: 'kraggle_maths_symbols/S/',
+ 68: 'kraggle_maths_symbols/\sigma/',
+ 69: 'kraggle_maths_symbols/\sin/',
+ 70: 'kraggle_maths_symbols/\sqrt/',
+ 71: 'kraggle_maths_symbols/\sum/',
+ 72: 'kraggle_maths_symbols/T/',
+ 73: 'kraggle_maths_symbols/tan/',
+ 74: 'kraggle_maths_symbols/\\theta/',
+ 75: 'kraggle_maths_symbols/*/',
+ 76: 'kraggle_maths_symbols/u/',
+ 77: 'kraggle_maths_symbols/v/',
+ 78: 'kraggle_maths_symbols/w/',
+ 79: 'kraggle_maths_symbols/X/',
+ 80: 'kraggle_maths_symbols/y/',
+81: 'kraggle_maths_symbols/z/'}

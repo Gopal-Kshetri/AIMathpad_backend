@@ -8,14 +8,17 @@ import pickle
 
 
 from layout import *
+from labels import *
 from segmentation import get_parts_from_image2
 from utils import *
 
 modelI=keras.models.load_model('./models/inferenced.keras')
 
-label_indices=None
-with open('label_indices_now.pickle','rb') as file:
-    label_indices = pickle.load(file)
+label_indices = label_indexing
+
+# label_indices=None
+# with open('label_indices_now.pickle','rb') as file:
+#     label_indices = pickle.load(file)
 
 def recognise_parts(imgs,layout_seq, symb_imgs_store=None, model_pars=None):
 
