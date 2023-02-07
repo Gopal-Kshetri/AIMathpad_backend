@@ -8,21 +8,14 @@ import cv2
 from model_load import model_load
 from predict import make_prediction
 import numpy as np
-
+from pydantic import BaseModel
 app = FastAPI()
 
+class Data(BaseModel):
+    img_file: str
 
-from fastapi import FastAPI, File, UploadFile
-from fastapi.middleware.cors import CORSMiddleware
-import cv2
+origins = ['*']
 
-app = FastAPI()
-
-
-origins = [
-    "http://localhost",
-    "http://127.0.0.1:3000",
-]
 
 app.add_middleware(
     CORSMiddleware,
@@ -53,3 +46,6 @@ async def process_image(inp: Data):
     print(result)
     return {"message": result}
     
+@app.post("/uploadfile/")
+async def create_upload_file(data: Data):
+    return {"filename": data.img_file}
