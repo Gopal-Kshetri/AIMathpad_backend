@@ -12,6 +12,7 @@ def pad2square(img):
     elif shape[1]<shape[0]:
         nLines = shape[0]-shape[1]
         dim_smaller=1
+    else: return img
 
     shape_pad =  (math.floor(nLines/2),shape[1-dim_smaller])
     if dim_smaller==1: shape_pad = shape_pad[::-1]

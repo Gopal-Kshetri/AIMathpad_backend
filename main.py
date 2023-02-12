@@ -60,6 +60,6 @@ async def process_image(inp: Data):
     cv2.imwrite('hellohi.jpg',image)
     
     result = make_prediction(image)
-    print(result)
+    print("-->",result)
     return {"message": result}
     
