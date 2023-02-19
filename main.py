@@ -9,6 +9,14 @@ from model_load import model_load
 from predict import make_prediction
 import numpy as np
 from pydantic import BaseModel
+import io
+
+# For pix2tex
+# import pix2tex
+from pix2tex.cli import LatexOCR
+from PIL import Image
+# import pix2tex.convert as p2t
+
 app = FastAPI()
 
 class Data(BaseModel):
@@ -41,11 +49,26 @@ async def process_image(inp: Data):
     image[black_mask] = [255,255,255,255]
     
     cv2.imwrite('hellohi.jpg',image)
-    
-    result = make_prediction(image)
+    # result = make_prediction('hellohi.jpg')
+
+    # Implementing pix2tex    
+    image = Image.open('hellohi.jpg')
+    model = LatexOCR()
+    result = model(image)
+
     print("-->",result)
     return {"message": result}
     
 @app.post("/uploadfile/")
 async def create_upload_file(data: Data):
     return {"filename": data.img_file}
+
+# @app.post("/uploadfile/")
+# async def create_upload_file(file: UploadFile):
+#     request_object_content = await file.read()
+#     img = Image.open(io.BytesIO(request_object_content))
+#     model = LatexOCR()
+#     output = model(img)
+#     result = r''+ output
+#     print(result)
+#     return {"filename": result}

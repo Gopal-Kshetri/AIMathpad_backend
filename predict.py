@@ -116,10 +116,10 @@ def predict_image(img_path,display_parts=False,symb_imgs_store=None, model_pars=
 
 
 def make_prediction(img, model_pars=None):
-        img_path = "./extracted_images/hellohi.jpg"
-        cv2.imwrite(img_path,img)
-        cached_img_path=img_path
+        # img_path = "./extracted_images/hellohi.jpg"
+        # cv2.imwrite(img_path,img)
+        # cached_img_path=img_path
         error_imgs_train_cache = []
-        ans = predict_image(img_path, symb_imgs_store = error_imgs_train_cache, model_pars=model_pars)
+        ans = predict_image(img, symb_imgs_store = error_imgs_train_cache, model_pars=model_pars)
 
         return str(ans)
