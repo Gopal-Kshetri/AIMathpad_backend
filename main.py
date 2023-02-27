@@ -5,15 +5,17 @@ from pydantic import BaseModel
 import base64
 import cv2
 
-from model_load import model_load
-from predict import make_prediction
+from predict import predict_image, make_prediction
 import numpy as np
 from pydantic import BaseModel
 import io
 
+import tensorflow as tf
+from tensorflow import keras
+
 # For pix2tex
 # import pix2tex
-from pix2tex.cli import LatexOCR
+from pix2tex.cli import LatexOCR, get_model, in_model_path
 from PIL import Image
 # import pix2tex.convert as p2t
 
@@ -53,7 +55,13 @@ async def process_image(inp: Data):
 
     # Implementing pix2tex    
     image = Image.open('hellohi.jpg')
+    
+
+    #Load Model
+    checkpoint_path = "models/weights2.pth"
+    # model = keras.models.load_model(checkpoint_path)
     model = LatexOCR()
+    # Result
     result = model(image)
 
     print("-->",result)
