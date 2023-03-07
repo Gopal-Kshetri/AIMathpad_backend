@@ -5,10 +5,11 @@ from pydantic import BaseModel
 import base64
 import cv2
 
-from predict import predict_image, make_prediction
+from predict import make_prediction
 import numpy as np
 from pydantic import BaseModel
 import io
+from munch import Munch
 
 import tensorflow as tf
 from tensorflow import keras
@@ -49,20 +50,26 @@ async def process_image(inp: Data):
     black_mask = image[:,:,-1]>0
 
     image[black_mask] = [255,255,255,255]
+
+    image_path = 'hellohi.jpg'
+
     
-    cv2.imwrite('hellohi.jpg',image)
+    cv2.imwrite(image_path, image)
     # result = make_prediction('hellohi.jpg')
 
     # Implementing pix2tex    
-    image = Image.open('hellohi.jpg')
+    image = Image.open(image_path)
     
 
     #Load Model
-    checkpoint_path = "models/weights2.pth"
+    checkpoint_path = "C:\\Users\\baida\\Documents\\lict\\AIMathpad_backend\\models\\weights3.pth"
+    arguments = Munch({'config': 'settings/config.yaml', 'checkpoint': checkpoint_path, 'no_cuda': True, 'no_resize': False})
     # model = keras.models.load_model(checkpoint_path)
-    model = LatexOCR()
+    model = LatexOCR(arguments=arguments)
     # Result
     result = model(image)
+
+    # result = make_prediction(image_path)
 
     print("-->",result)
     return {"message": result}
