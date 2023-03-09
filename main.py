@@ -5,7 +5,6 @@ from pydantic import BaseModel
 import base64
 import cv2
 
-from predict import make_prediction
 import numpy as np
 from pydantic import BaseModel
 import io
