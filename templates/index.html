@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CKEditor 5 Framework – Quick start</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://unpkg.com/@cortex-js/compute-engine?module"></script>
+    <script src="https://unpkg.com/mathlive"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Times+New Roman&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/style.css">
+
+</head>
+
+<body>
+    
+    <div class="full-body">
+        <div class="NavBar">
+            <span class="e4_211">ckEDITOR</span>
+            <div class="e4_212">
+                <div class=e4_213><span class="ei4_213_3_3">Menu</span></div>
+                <div class=e4_214>
+                    <div class=e4_215><span class="ei4_215_3_4">Feature1</span></div>
+                    <div class=e4_216><span class="ei4_216_3_4">Feature1</span></div>
+                    <div class=e4_217><span class="ei4_217_3_4">Feature1</span></div>
+                    <div class=e4_218><span class="ei4_218_3_4">Feature1</span></div>
+                </div>
+            </div>
+            <div class=e4_219>
+                <div class=e4_220><span class="ei4_220_3_3">Folders</span></div>
+                <div class=e4_221>
+                    <div class=e4_222><span class="ei4_222_3_4">Folder1</span></div>
+                    <div class=e4_223><span class="ei4_223_3_4">+New Folder</span></div>
+                    <div class=e4_224><span class="ei4_224_3_4">Folder3</span></div>
+                    <div class=e4_225><span class="ei4_225_3_4">Folder2</span></div>
+                </div>
+            </div>
+            <div class=e4_226>
+                <div class=e4_227><span class="ei4_227_3_3">Menu</span></div>
+                <div class=e4_228>
+                    <div class=e4_229><span class="ei4_229_3_4">Feature1</span></div>
+                    <div class=e4_230><span class="ei4_230_3_4">Feature1</span></div>
+                    <div class=e4_231><span class="ei4_231_3_4">Feature1</span></div>
+                    <div class=e4_232><span class="ei4_232_3_4">Feature1</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="FileList">
+            <div class=e4_234>
+                <div class="e4_235"></div><span class="e4_236">Files</span>
+            </div>
+            <div class=e4_237>
+                <div class="e4_238"></div><span class="e4_239">Search</span>
+                <div class=e4_240>
+                    <div class="e4_241"></div>
+                    <div class="e4_242"></div>
+                </div>
+            </div>
+            <div class=e4_243>
+                <div class="ei4_243_3_92"></div><span class="ei4_243_3_90">My trip to space.doc</span><span
+                    class="ei4_243_3_89">5/23/23 - Lorem Ipsum doloros</span>
+                <div class="ei4_243_3_91"></div>
+            </div>
+            <div class=e4_244>
+                <div class="e4_245"></div><span class="e4_246">Bernoulli.doc</span><span class="e4_247">5/23/23 - Lorem
+                    Ipsum
+                    doloros</span>
+                <div class="e4_248"></div>
+            </div>
+            <div class=e4_249>
+                <div class="e4_250"></div><span class="e4_251">Why.doc</span><span class="e4_252">5/23/23 - Lorem Ipsum
+                    doloros</span>
+                <div class="e4_253"></div>
+            </div>
+            <div class=e4_254>
+                <div class="ei4_254_3_92"></div><span class="ei4_254_3_90">is.doc</span><span
+                    class="ei4_254_3_89">5/23/23 -
+                    Lorem Ipsum doloros</span>
+                <div class="ei4_254_3_91"></div>
+            </div>
+            <div class=e4_255>
+                <div class="ei4_255_3_92"></div><span class="ei4_255_3_90">MAthSo.doc</span><span
+                    class="ei4_255_3_89">5/23/23 -
+                    Lorem Ipsum doloros</span>
+                <div class="ei4_255_3_91"></div>
+            </div>
+            <div class=e4_256>
+                <div class="ei4_256_3_92"></div><span class="ei4_256_3_90">Hard.docx</span><span
+                    class="ei4_256_3_89">5/23/23 -
+                    Lorem Ipsum doloros</span>
+                <div class="ei4_256_3_91"></div>
+            </div>
+        </div>
+        <div class="ToolBar">
+            <div class="e4_258"></div>
+            <div class=e4_259>
+                <div class=ei4_259_4_156>
+                    <div class="ei4_259_4_153"></div>
+                    <div class="ei4_259_4_154"></div>
+                    <div class="ei4_259_4_155"></div>
+                </div>
+            </div>
+            <div class=e4_260>
+                <div class=e4_261>
+                    <div class="e4_262"></div>
+                    <div class="e4_263"></div>
+                    <div class="e4_264"></div>
+                </div>
+            </div>
+            <div class=e4_265>
+                <div class="e4_266"></div>
+            </div>
+            <div class=e4_267><span class="e4_272">T</span></div>
+            <div class=e4_273></div>
+        </div>
+        <div class="Main">
+            <div id="mathtype-editor" style="height: 100%;">
+                <br/>
+                <p>Kehi ta lekha
+                    <img class="math-field ck-widget ck-widget_selected" latex_code="\theta" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=%5Ctheta" contenteditable="false">
+
+                </p>
+            </div>
+
+            <div class=e4_278>
+                <div class="e4_279">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="static/bundle.js"></script>
+</body>
+
+</html>

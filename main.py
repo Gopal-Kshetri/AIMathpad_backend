@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI,Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -42,17 +42,13 @@ class Data(BaseModel):
 @app.post("/process-image")
 async def process_image(inp: Data):
     img_64 = inp.img_file
-    # with open("imageToSave.jpg", "wb") as fh:
-    #     fh.write(base64.decodebytes(img_64.encode()))
     nparr = np.fromstring(base64.b64decode(img_64), np.uint8)
     image = cv2.imdecode(nparr, cv2.IMREAD_UNCHANGED)
 
     black_mask = image[:,:,-1]>0
-
     image[black_mask] = [255,255,255,255]
 
     image_path = 'hellohi.jpg'
-
     
     cv2.imwrite(image_path, image)
     # result = make_prediction('hellohi.jpg')
@@ -62,7 +58,8 @@ async def process_image(inp: Data):
     
 
     #Load Model
-    checkpoint_path = "C:\\Users\\baida\\Documents\\lict\\AIMathpad_backend\\models\\weights3.pth"
+    import os
+    checkpoint_path = os.path.join(os.getcwd(),"models/weights3.pth")
     arguments = Munch({'config': 'settings/config.yaml', 'checkpoint': checkpoint_path, 'no_cuda': True, 'no_resize': False})
     # model = keras.models.load_model(checkpoint_path)
     model = LatexOCR(arguments=arguments)
@@ -78,12 +75,18 @@ async def process_image(inp: Data):
 async def create_upload_file(data: Data):
     return {"filename": data.img_file}
 
-# @app.post("/uploadfile/")
-# async def create_upload_file(file: UploadFile):
-#     request_object_content = await file.read()
-#     img = Image.open(io.BytesIO(request_object_content))
-#     model = LatexOCR()
-#     output = model(img)
-#     result = r''+ output
-#     print(result)
-#     return {"filename": result}
+
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
+templates = Jinja2Templates(directory="templates")
+
+
+
+@app.get("/")
+async def homePage(request:Request,response_class=HTMLResponse):
+    return templates.TemplateResponse("index.html", {"request": request})
