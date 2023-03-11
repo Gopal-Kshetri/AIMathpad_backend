@@ -3,3 +3,4 @@ extracted_images/
 hellohi.jpg
 train_data/
 wandb/
+checkpoints/
