@@ -62,7 +62,7 @@ async def process_image(inp: Data):
     
 
     #Load Model
-    checkpoint_path = "C:\\Users\\baida\\Documents\\lict\\AIMathpad_backend\\models\\weights6.pth"
+    checkpoint_path = "C:\\Users\\baida\\Documents\\lict\\AIMathpad_backend\\models\\weights8.pth"
     arguments = Munch({'config': 'settings/config.yaml', 'checkpoint': checkpoint_path, 'no_cuda': True, 'no_resize': False})
     # model = keras.models.load_model(checkpoint_path)
     model = LatexOCR(arguments=arguments)
