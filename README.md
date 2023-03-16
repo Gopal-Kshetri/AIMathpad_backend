@@ -11,3 +11,4 @@
 - `main.py` contains the implementation of api routes in fastapi, including receiving uploaded image for prediction.
 - `config.yaml` contains the configuration for the model used ([pix2tex](https://lukas-blecher.github.io/LaTeX-OCR/)).
 - `models` contains the trained models.
+- Dataset used for finetuning: [handwrittenmathsymbols](https://www.kaggle.com/datasets/xainano/handwrittenmathsymbols)
